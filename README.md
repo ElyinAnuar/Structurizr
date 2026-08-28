@@ -1,4 +1,4 @@
-# Plantilla Structurizr para Paynau y RedEfectiva
+# Plantilla Structurizr para Empresas
 
 Este repositorio contiene una plantilla base para documentar arquitecturas de software con el enfoque C4 usando Structurizr.
 
