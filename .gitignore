@@ -1,0 +1,37 @@
+# Docker / runtime artifacts
+.docker/
+*.log
+
+# Local environment
+.env
+.env.local
+.env.*.local
+
+# Node / Java / build outputs (common in tooling)
+node_modules/
+dist/
+build/
+out/
+.target/
+*.class
+
+# IDE / editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Structurizr local generated data
+**/.structurizr/
+**/themes/
+**/logs/
+
+# Optional: keep only source files for workspaces
+# Uncomment if you want to ignore generated work artifacts
+# Structurizr/workspace/**/workspace.json
+# Structurizr/workspace/**/.structurizr/

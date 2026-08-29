@@ -1,0 +1,11 @@
+services:
+  structurizr:
+    image: structurizr/structurizr
+    container_name: structurizr
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./Structurizr/workspace:/usr/local/structurizr
+    command: local /usr/local/structurizr/${WORKSPACE_NAME:-paynau}
+    environment:
+      WORKSPACE_NAME: ${WORKSPACE_NAME:-paynau}

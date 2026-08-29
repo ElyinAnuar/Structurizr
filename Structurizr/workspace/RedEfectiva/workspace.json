@@ -1,0 +1,266 @@
+{
+  "configuration" : {
+    "scope" : "SoftwareSystem"
+  },
+  "description" : "Plantilla inicial de arquitectura para RedEfectiva",
+  "documentation" : { },
+  "id" : 1,
+  "lastModifiedDate" : "2026-08-29T01:06:06Z",
+  "model" : {
+    "people" : [ {
+      "description" : "Persona que utiliza las capacidades de la plataforma.",
+      "id" : "2",
+      "name" : "Cliente",
+      "properties" : {
+        "structurizr.dsl.identifier" : "customer"
+      },
+      "relationships" : [ {
+        "description" : "Utiliza",
+        "destinationId" : "4",
+        "id" : "9",
+        "sourceId" : "2",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Utiliza",
+        "destinationId" : "1",
+        "id" : "10",
+        "linkedRelationshipId" : "9",
+        "sourceId" : "2"
+      } ],
+      "tags" : "Element,Person,Usuario Externo"
+    }, {
+      "description" : "Persona responsable de gestionar la operación de la plataforma.",
+      "id" : "3",
+      "name" : "Operador",
+      "properties" : {
+        "structurizr.dsl.identifier" : "operator"
+      },
+      "relationships" : [ {
+        "description" : "Administra",
+        "destinationId" : "4",
+        "id" : "11",
+        "sourceId" : "3",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Administra",
+        "destinationId" : "1",
+        "id" : "12",
+        "linkedRelationshipId" : "11",
+        "sourceId" : "3"
+      } ],
+      "tags" : "Element,Person,Usuario Interno"
+    } ],
+    "softwareSystems" : [ {
+      "containers" : [ {
+        "description" : "Interfaz para clientes y operadores.",
+        "documentation" : { },
+        "id" : "4",
+        "name" : "Aplicación web",
+        "properties" : {
+          "structurizr.dsl.identifier" : "isRedEfectivaPlatform.conWebApp"
+        },
+        "relationships" : [ {
+          "description" : "Consume la API",
+          "destinationId" : "5",
+          "id" : "7",
+          "sourceId" : "4",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,Navegador Web",
+        "technology" : "Web"
+      }, {
+        "description" : "Punto de entrada para las operaciones del sistema.",
+        "documentation" : { },
+        "id" : "5",
+        "name" : "API principal",
+        "properties" : {
+          "structurizr.dsl.identifier" : "isRedEfectivaPlatform.conApi"
+        },
+        "relationships" : [ {
+          "description" : "Lee y escribe datos",
+          "destinationId" : "6",
+          "id" : "8",
+          "sourceId" : "5",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,API",
+        "technology" : "API REST"
+      }, {
+        "description" : "Almacenamiento persistente de la información del sistema.",
+        "documentation" : { },
+        "id" : "6",
+        "name" : "Base de datos",
+        "properties" : {
+          "structurizr.dsl.identifier" : "isRedEfectivaPlatform.conDatabase"
+        },
+        "tags" : "Element,Container,Almacenamiento",
+        "technology" : "Relational Database"
+      } ],
+      "description" : "Plataforma de gestión y operación para RedEfectiva.",
+      "documentation" : {
+        "sections" : [ {
+          "content" : "# RedEfectiva\n\n## Contexto\n\nEsta plantilla describe el contexto inicial de la plataforma RedEfectiva. El contenido está preparado para completarse con el propósito, alcance, actores, regiones y restricciones reales del producto.\n\n### Objetivo\n\nDocumentar de forma progresiva la arquitectura de RedEfectiva usando el modelo C4.\n\n### Actores iniciales\n\n- **Cliente**: utiliza las capacidades expuestas por la plataforma.\n- **Operador**: administra o supervisa la operación.\n\n### Diagrama de contexto\n\n![](embed:Context)\n\n> Completar esta sección con los sistemas externos y las integraciones reales de RedEfectiva.\n",
+          "filename" : "\\01-context.md",
+          "format" : "Markdown",
+          "order" : 1,
+          "title" : ""
+        }, {
+          "content" : "# Visión funcional de RedEfectiva\n\n## Objetivo\n\nDefinir el alcance funcional inicial de RedEfectiva para orientar la arquitectura y la documentación del sistema.\n\n## Funcionalidades iniciales\n\n- Acceso a la plataforma por parte del cliente.\n- Administración y supervisión por parte del operador.\n- Consulta de información desde la aplicación web.\n- Procesamiento de operaciones a través de la API.\n- Persistencia de datos en la base de datos.\n\n## Alcance provisional\n\nEste documento debe completarse con los flujos reales de negocio, roles, permisos y servicios que forme la solución final.\n",
+          "filename" : "\\02-functional-overview.md",
+          "format" : "Markdown",
+          "order" : 2,
+          "title" : ""
+        }, {
+          "content" : "# Arquitectura de software de RedEfectiva\n\n## Vista de componentes\n\nLa solución inicial contempla una estructura simple basada en:\n\n- Aplicación web\n- API principal\n- Base de datos\n- Actores del sistema: cliente y operador\n\n## Principios\n\n- Separación clara entre exposición, lógica de negocio y persistencia.\n- Visibilidad de las relaciones principales entre actores y componentes.\n- Base extensible para evolucionar hacia mayor detalle funcional y técnico.\n",
+          "filename" : "\\06-software-architecture.md",
+          "format" : "Markdown",
+          "order" : 3,
+          "title" : ""
+        }, {
+          "content" : "# Datos de RedEfectiva\n\n## Modelo de datos inicial\n\nEl almacenamiento inicial puede centrarse en la persistencia de la información operativa y transaccional de la plataforma.\n\n## Consideraciones\n\n- Definir entidades principales del negocio.\n- Identificar los datos que maneja cliente, operador y sistema.\n- Determinar reglas de acceso, auditoría y retención.\n\n> Este documento debe completarse con el diseño final del modelo de datos.\n",
+          "filename" : "\\08-data.md",
+          "format" : "Markdown",
+          "order" : 4,
+          "title" : ""
+        } ]
+      },
+      "id" : "1",
+      "name" : "RedEfectiva",
+      "properties" : {
+        "structurizr.dsl.identifier" : "isRedEfectivaPlatform"
+      },
+      "tags" : "Element,Software System,Sistema Interno"
+    } ]
+  },
+  "name" : "RedEfectiva",
+  "properties" : {
+    "structurizr.inspection.error" : "7",
+    "structurizr.inspection.info" : "0",
+    "structurizr.inspection.ignore" : "0",
+    "structurizr.inspection.warning" : "0"
+  },
+  "views" : {
+    "configuration" : {
+      "styles" : {
+        "elements" : [ {
+          "background" : "#2d9bf0",
+          "color" : "#ffffff",
+          "shape" : "RoundedBox",
+          "stroke" : "#2d9bf0",
+          "tag" : "API"
+        }, {
+          "background" : "#00810b",
+          "color" : "#ffffff",
+          "shape" : "Cylinder",
+          "stroke" : "#00810b",
+          "tag" : "Almacenamiento"
+        }, {
+          "background" : "#2d9bf0",
+          "color" : "#ffffff",
+          "shape" : "WebBrowser",
+          "stroke" : "#2d9bf0",
+          "tag" : "Navegador Web"
+        }, {
+          "background" : "#2d9bf0",
+          "color" : "#ffffff",
+          "shape" : "RoundedBox",
+          "stroke" : "#2d9bf0",
+          "tag" : "Sistema Interno"
+        }, {
+          "background" : "#556266",
+          "color" : "#ffffff",
+          "shape" : "Person",
+          "stroke" : "#556266",
+          "tag" : "Usuario Externo"
+        }, {
+          "background" : "#132f60",
+          "color" : "#ffffff",
+          "shape" : "Person",
+          "stroke" : "#132f60",
+          "tag" : "Usuario Interno"
+        } ]
+      },
+      "terminology" : { }
+    },
+    "containerViews" : [ {
+      "automaticLayout" : {
+        "edgeSeparation" : 50,
+        "nodeSeparation" : 50,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 100,
+        "vertices" : true
+      },
+      "description" : "Contenedores principales de la plataforma RedEfectiva.",
+      "elements" : [ {
+        "id" : "2",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "3",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "4",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "5",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "6",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "key" : "Containers",
+      "name" : "Container View: RedEfectiva",
+      "order" : 2,
+      "relationships" : [ {
+        "id" : "11"
+      }, {
+        "id" : "7"
+      }, {
+        "id" : "8"
+      }, {
+        "id" : "9"
+      } ],
+      "softwareSystemId" : "1",
+      "title" : "RedEfectiva - Contenedores"
+    } ],
+    "systemContextViews" : [ {
+      "automaticLayout" : {
+        "edgeSeparation" : 50,
+        "nodeSeparation" : 50,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 100,
+        "vertices" : true
+      },
+      "description" : "Sistema RedEfectiva y sus principales actores.",
+      "elements" : [ {
+        "id" : "1",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "2",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "3",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "key" : "Context",
+      "name" : "System Context View: RedEfectiva",
+      "order" : 1,
+      "relationships" : [ {
+        "id" : "10"
+      }, {
+        "id" : "12"
+      } ],
+      "softwareSystemId" : "1",
+      "title" : "RedEfectiva - Contexto"
+    } ]
+  }
+}
