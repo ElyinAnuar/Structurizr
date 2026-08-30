@@ -1,0 +1,45 @@
+@startuml
+!pragma teoz true
+!pragma sequenceMessageSpan true
+
+actor ClientUser as "Client_User"
+skinparam sequenceArrowThickness 2
+skinparam roundcorner 20
+skinparam maxmessagesize 60
+
+participant Middle as "Middle"
+participant Layers as "Layers"
+participant BussinesCore as "Bussines Core"
+participant Database as "Conection Database"
+
+    ClientUser o-> Middle: Send credentials
+    activate Middle
+    Middle x-->o Middle: Error Autentication
+    Middle -->o ClientUser: Credentials OK
+    deactivate Middle
+
+    ClientUser o-> Layers: Send requestBody controller method
+    activate Layers
+    Layers -> BussinesCore : Send requestBody bussines logic
+
+    deactivate Layers
+    activate BussinesCore
+    
+    BussinesCore x-->o BussinesCore : Error bussines logic    
+    
+    BussinesCore -> Database : Exec storeprocedure
+    activate Database
+    Database x--> Database : Fail storeprocedure
+
+    Database --> BussinesCore : Success storeprocedure
+    deactivate Database
+
+    BussinesCore x-->o BussinesCore: Error Manage bussines logic
+    BussinesCore --> Layers : Success
+    
+    deactivate BussinesCore 
+
+    Layers --> Middle: Response controller method
+    Middle -->o ClientUser : Response API
+
+@enduml

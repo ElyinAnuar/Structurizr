@@ -47,8 +47,8 @@ Structurizr/
 │   │       ├── system_01.dsl
 │   │       └── system_02.dsl
 ├── PlanUML/
-│   ├── producto
-│      └──producto-activity.puml 
+│   └── producto
+│      └── producto-activity.puml 
 ├── workspace/
 │   ├── producto/
 │   │   ├── workspace.dsl
