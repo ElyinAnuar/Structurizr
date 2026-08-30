@@ -18,9 +18,10 @@ La estructura está organizada para separar responsabilidades y facilitar la ext
 
 - `workspace/`: workspaces independientes por proyecto
 - `shared/`: artefactos reutilizables compartidos
-- `syles/`: estilos visuales para los diagramas
-- `docs/`: documentación funcional y técnica
+- `syles/`: estilos visuales para los diagramas C4
+- `docs/`: documentación funcional, técnica y diagramas UML
 - `adrs/`: decisiones de arquitectura registradas
+- Diagramas UML (PlantUML): diagramas de actividad y secuencia
 
 ## Estructura principal
 
@@ -51,14 +52,26 @@ Structurizr/
 │   │   ├── internal-relationships.dsl
 │   │   ├── external-relationships.dsl
 │   │   ├── docs/
+│   │   │   ├── 01-context.md
+│   │   │   ├── 02-functional-overview.md
+│   │   │   ├── 06-software-architecture.md
+│   │   │   ├── 08-data.md
+│   │   │   └── *.puml (diagramas UML)
 │   │   └── adrs/
+│   │       └── 0001-initial-architecture.md
 │   └── RedEfectiva/
 │       ├── workspace.dsl
 │       ├── internal-relationships.dsl
 │       ├── external-relationships.dsl
 │       ├── docs/
+│       │   ├── 01-context.md
+│       │   ├── 02-functional-overview.md
+│       │   ├── 06-software-architecture.md
+│       │   ├── 08-data.md
+│       │   └── redEfectiva-activity-final.puml
 │       └── adrs/
-└──
+│           └── 0001-initial-architecture.md
+└── Plan de implementacion.docx
 ```
 
 ## Cómo se usa esta plantilla
@@ -70,14 +83,18 @@ Cada workspace representa un sistema o solución concreta. Por ejemplo:
 
 Cada workspace contiene:
 
-1. El sistema principal
+1. El sistema principal (workspace.dsl)
 2. Los actores involucrados
 3. Los contenedores principales
 4. Las relaciones internas y externas
 5. Las vistas C4 de contexto y contenedores
-6. Su documentación y ADRs
+6. Documentación funcional y técnica en `docs/`
+7. Diagramas UML de actividad y secuencia (PlantUML)
+8. Decisiones de arquitectura registradas en `adrs/`
 
-## Modelado base
+## Formatos de modelado soportados
+
+### Structurizr DSL (C4 Model)
 
 La plantilla reutiliza un patrón común:
 
@@ -86,6 +103,12 @@ La plantilla reutiliza un patrón común:
 - `container`: define contenedores como web app y API
 - `relationship`: define conexiones entre componentes
 - `views`: exponen las vistas de contexto y contenedores
+
+### Diagramas UML (PlantUML)
+
+- **Diagramas de Actividad**: flujos de procesos y casos de uso
+- **Diagramas de Secuencia**: interacciones entre componentes
+- **Formatos generados**: .puml y .svg
 
 ## Ejemplo de conceptos incluidos
 
@@ -118,7 +141,9 @@ Esto permite escalar la plantilla a varios proyectos sin duplicar por completo l
 4. Definir contenedores compartidos o específicos
 5. Añadir relaciones internas y externas
 6. Configurar las vistas `Context` y `Containers`
-7. Documentar decisiones con ADRs
+7. Crear diagramas UML complementarios con PlantUML
+8. Documentar decisiones de arquitectura con ADRs
+9. Escribir documentación funcional y técnica en `docs/`
 
 ## ¿Cuándo usar esta plantilla?
 
