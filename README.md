@@ -46,32 +46,22 @@ Structurizr/
 │   │   └── systems/
 │   │       ├── paynau-system.dsl
 │   │       └── redEfectiva-system.dsl
-├── uml-diagrams/
-│   ├── redEfectiva-activity-final.puml
-│   └── redEfectiva-activity-final.svg
+├── PlanUML/
+│   ├── redefectiva
+│      └──redEfectiva-activity-final.puml 
 ├── workspace/
 │   ├── paynau/
 │   │   ├── workspace.dsl
 │   │   ├── internal-relationships.dsl
 │   │   ├── external-relationships.dsl
 │   │   ├── docs/
-│   │   │   ├── 01-context.md
-│   │   │   ├── 02-functional-overview.md
-│   │   │   ├── 06-software-architecture.md
-│   │   │   └── 08-data.md
 │   │   └── adrs/
-│   │       └── 0001-initial-architecture.md
 │   └── RedEfectiva/
 │       ├── workspace.dsl
 │       ├── internal-relationships.dsl
 │       ├── external-relationships.dsl
 │       ├── docs/
-│       │   ├── 01-context.md
-│       │   ├── 02-functional-overview.md
-│       │   ├── 06-software-architecture.md
-│       │   └── 08-data.md
 │       └── adrs/
-│           └── 0001-initial-architecture.md
 └── Plan de implementacion.docx
 ```
 
