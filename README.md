@@ -19,9 +19,9 @@ La estructura está organizada para separar responsabilidades y facilitar la ext
 - `workspace/`: workspaces independientes por proyecto
 - `shared/`: artefactos reutilizables compartidos
 - `syles/`: estilos visuales para los diagramas C4
-- `docs/`: documentación funcional, técnica y diagramas UML
-- `adrs/`: decisiones de arquitectura registradas
-- Diagramas UML (PlantUML): diagramas de actividad y secuencia
+- `uml-diagrams/`: diagramas UML centralizados (PlantUML)
+- Documentación funcional y técnica en cada workspace
+- `adrs/`: decisiones de arquitectura registradas por proyecto
 
 ## Estructura principal
 
@@ -46,6 +46,9 @@ Structurizr/
 │   │   └── systems/
 │   │       ├── paynau-system.dsl
 │   │       └── redEfectiva-system.dsl
+├── uml-diagrams/
+│   ├── redEfectiva-activity-final.puml
+│   └── redEfectiva-activity-final.svg
 ├── workspace/
 │   ├── paynau/
 │   │   ├── workspace.dsl
@@ -55,8 +58,7 @@ Structurizr/
 │   │   │   ├── 01-context.md
 │   │   │   ├── 02-functional-overview.md
 │   │   │   ├── 06-software-architecture.md
-│   │   │   ├── 08-data.md
-│   │   │   └── *.puml (diagramas UML)
+│   │   │   └── 08-data.md
 │   │   └── adrs/
 │   │       └── 0001-initial-architecture.md
 │   └── RedEfectiva/
@@ -67,8 +69,7 @@ Structurizr/
 │       │   ├── 01-context.md
 │       │   ├── 02-functional-overview.md
 │       │   ├── 06-software-architecture.md
-│       │   ├── 08-data.md
-│       │   └── redEfectiva-activity-final.puml
+│       │   └── 08-data.md
 │       └── adrs/
 │           └── 0001-initial-architecture.md
 └── Plan de implementacion.docx
@@ -89,8 +90,9 @@ Cada workspace contiene:
 4. Las relaciones internas y externas
 5. Las vistas C4 de contexto y contenedores
 6. Documentación funcional y técnica en `docs/`
-7. Diagramas UML de actividad y secuencia (PlantUML)
-8. Decisiones de arquitectura registradas en `adrs/`
+7. Decisiones de arquitectura registradas en `adrs/`
+
+Los **diagramas UML** (PlantUML) están centralizados en la carpeta `uml-diagrams/` en la raíz del proyecto, permitiendo su reutilización y fácil acceso desde múltiples workspaces.
 
 ## Formatos de modelado soportados
 
@@ -141,7 +143,7 @@ Esto permite escalar la plantilla a varios proyectos sin duplicar por completo l
 4. Definir contenedores compartidos o específicos
 5. Añadir relaciones internas y externas
 6. Configurar las vistas `Context` y `Containers`
-7. Crear diagramas UML complementarios con PlantUML
+7. Crear diagramas UML complementarios en la carpeta `uml-diagrams/` (PlantUML)
 8. Documentar decisiones de arquitectura con ADRs
 9. Escribir documentación funcional y técnica en `docs/`
 

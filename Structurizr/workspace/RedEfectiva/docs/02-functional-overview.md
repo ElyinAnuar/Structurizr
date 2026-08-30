@@ -20,7 +20,7 @@ El siguiente diagrama describe un flujo genérico de operación dentro de la pla
 
 Este entorno de vista previa no carga módulos de lenguaje para PlantUML ni Mermaid, por lo que la opción más segura es dejar el flujo en texto plano con formato ASCII. Así el diagrama sigue siendo legible sin depender de extensiones ni renderers externos.
  
-![Diagrama de actividades](image.png)
+![Diagrama de actividades](/Structurizr/PlanUML/redefectiva/redEfectiva-activity-final.svg)
 
 > Nota: esta versión funciona en cualquier visor sin dependencias adicionales y conserva la intención del flujo funcional del sistema.
 
