@@ -44,24 +44,18 @@ Structurizr/
 │   │   ├── User/
 │   │   │   └── operator.dsl
 │   │   └── systems/
-│   │       ├── paynau-system.dsl
-│   │       └── redEfectiva-system.dsl
+│   │       ├── system_01.dsl
+│   │       └── system_02.dsl
 ├── PlanUML/
-│   ├── redefectiva
-│      └──redEfectiva-activity-final.puml 
+│   ├── producto
+│      └──producto-activity.puml 
 ├── workspace/
-│   ├── paynau/
+│   ├── producto/
 │   │   ├── workspace.dsl
 │   │   ├── internal-relationships.dsl
 │   │   ├── external-relationships.dsl
 │   │   ├── docs/
 │   │   └── adrs/
-│   └── RedEfectiva/
-│       ├── workspace.dsl
-│       ├── internal-relationships.dsl
-│       ├── external-relationships.dsl
-│       ├── docs/
-│       └── adrs/
 └── Plan de implementacion.docx
 ```
 
