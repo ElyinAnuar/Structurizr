@@ -1,0 +1,29 @@
+﻿@startuml
+start
+:Cliente accede a la plataforma;
+if (Autenticado?) then (si)
+  :Cliente solicita una operacion o consulta;
+  :Portal Web envia la solicitud a la API;
+  :API valida datos y reglas de negocio;
+  if (Datos validos?) then (si)
+    :API procesa la solicitud;
+    :Base de Datos guarda la informacion;
+    if (Requiere aprobacion?) then (si)
+      :Operador revisa la solicitud;
+      if (Aprobado?) then (si)
+        :API actualiza el estado;
+        :Portal Web notifica al cliente;
+      else (no)
+        :Operador rechaza la operacion;
+      endif
+    else (no)
+      :Portal Web confirma la operacion completada;
+    endif
+  else (no)
+    :API devuelve error de validacion;
+  endif
+else (no)
+  :Portal Web redirige al login;
+endif
+stop
+@enduml

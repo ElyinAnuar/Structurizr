@@ -5,7 +5,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./Structurizr/workspace:/usr/local/structurizr
-    command: local /usr/local/structurizr/${WORKSPACE_NAME:-paynau}
+      - ./Structurizr:/usr/local/structurizr
+    command: local /usr/local/structurizr/workspace/${WORKSPACE_NAME:-paynau}
     environment:
       WORKSPACE_NAME: ${WORKSPACE_NAME:-paynau}
